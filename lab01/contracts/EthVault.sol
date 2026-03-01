@@ -3,46 +3,42 @@ pragma solidity ^0.8.20;
 
 contract EthVault {
     // --- STATE VARIABLES ---
-    // TODO: Declare a public variable to store the owner's address. 
-    // (Hint: Making it 'immutable' is a good practice since it's only set once)
-    
+    address public immutable owner;
+
     // --- EVENTS ---
-    // TODO: Define Deposit event: event Deposit(...)
-    
-    // Defined for you based on specific constraints:
-    event Withdraw(address indexed to, uint256 amount);
-    
-    // TODO: Define UnauthorizedWithdrawAttempt event: event UnauthorizedWithdrawAttempt(...)
+    event Deposit(address indexed sender, uint256 amount);
+    event Weethdraw (address indexed to, uint256 amount);
+    event UnauthorizedWithdrawAttempt(address indexed caller, uint256 amount);
 
     // --- CONSTRUCTOR ---
     constructor() {
-        // TODO: Set the owner variable to the address deploying the contract (msg.sender)
+        // Set the owner variable to the address deploying the contract when instantiated
+        owner = msg.sender;
     }
 
     // --- RECEIVE ETH ---
     // TODO: Implement receive() external payable { ... } OR fallback() external payable { ... }
-    // Inside it: 
+    // Inside it:
     // 1. Accept the ETH (happens automatically if marked payable)
     // 2. Emit the Deposit event with the sender and amount
+    receive() external payable {
+        emit Deposit(msg.sender, msg.value);
+    }
 
     // --- WITHDRAW FUNDS ---
     function withdraw(uint256 amount) external {
+        // UNATHORIZED FLOW
         if (msg.sender != owner) {
-            // UNATHORIZED FLOW
-            // TODO: Emit the UnauthorizedWithdrawAttempt event
-            
-            // TODO: Revert the transaction to prevent the withdrawal! 
-            // (Note: Make sure your implementation reverts here)
-            revert("Unauthorized access");
-        } 
-        
+            emit UnauthorizedWithdrawAttempt(msg.sender, amount);
+            return;
+        }
+
         // AUTHORIZED FLOW
-        // TODO: Check if the requested amount is <= the contract's balance. Revert if not.
-        
-        // TODO: Transfer the ETH to the owner. 
-        // Example safe method: (bool success, ) = msg.sender.call{value: amount}("");
-        // require(success, "Transfer failed");
-        
-        // TODO: Emit the Withdraw event
+        if (amount > address(this).balance) {
+            revert("Insufficient balance...");
+        }
+        (bool success, ) = msg.sender.call{value: amount}("");
+        require(success, "Transfer failed");
+        emit Weethdraw(msg.sender, amount);
     }
 }
