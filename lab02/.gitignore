@@ -19,4 +19,4 @@
 # Hardhat coverage reports
 /coverage
 
-/lab1.md
+.env

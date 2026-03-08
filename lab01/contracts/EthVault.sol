@@ -17,8 +17,6 @@ contract EthVault {
     }
 
     // --- RECEIVE ETH ---
-    // TODO: Implement receive() external payable { ... } OR fallback() external payable { ... }
-    // Inside it:
     // 1. Accept the ETH (happens automatically if marked payable)
     // 2. Emit the Deposit event with the sender and amount
     receive() external payable {
