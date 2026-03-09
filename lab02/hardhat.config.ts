@@ -15,7 +15,8 @@ export default defineConfig({
       type: "http",
       url: "https://garfield-testnet.zircuit.com",
       accounts: [
-        process.env.ZIRCUIT_PRIVATE_KEY,
+        process.env.OWNER_PRIVATE_KEY,
+        process.env.ALICE_PRIVATE_KEY,
         process.env.BOB_PRIVATE_KEY,
       ].filter(Boolean) as string[],
     },
