@@ -21,7 +21,7 @@ export default defineConfig({
       ].filter(Boolean) as string[],
     },
   },
-  // Zircuit Garfield Testnet 使用 Sourcify 驗證合約
+  // Zircuit Garfield Testnet use Sourcify
   verify: {
     etherscan: {
       enabled: false,

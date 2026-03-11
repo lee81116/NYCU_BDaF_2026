@@ -1,15 +1,15 @@
 import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
 
 export default buildModule("Lab02DeployModule", (m) => {
-  // 1. 部署 Token A
+  // 1. deploy Token A
   const tokenA = m.contract("TokenA");
 
-  // 2. 部署 Token B
+  // 2. deploy Token B
   const tokenB = m.contract("TokenB");
 
-  // 3. 部署 TokenTrade，並把剛剛部署好的 TokenA 和 TokenB 傳進去當參數
+  // 3. deploy TokenTrade
   const tokenTrade = m.contract("TokenTrade", [tokenA, tokenB]);
 
-  // 回傳結果
+  // return the deployed contracts
   return { tokenA, tokenB, tokenTrade };
 });

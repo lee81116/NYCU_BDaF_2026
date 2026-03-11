@@ -108,7 +108,7 @@ contract TokenTrade {
 
         // --- Interactions ---
         // Transfer the input tokens from the seller to this contract (Escrow)
-        // This requires the seller to have approved this contract in the ERC20 contract beforehand!
+        // Requires the seller to have approved this contract in the ERC20 contract beforehand
         bool success = IERC20(inputTokenForSale).transferFrom(
             msg.sender,
             address(this),

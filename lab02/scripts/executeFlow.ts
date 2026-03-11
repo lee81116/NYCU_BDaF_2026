@@ -18,9 +18,9 @@ import { network } from "hardhat";
 import { parseUnits, formatUnits } from "viem";
 
 // TODO: Replace these with the new addresses after deploying
-const TOKEN_A_ADDR = "0x24EFc2B61deC3549D46fFDc76077D7753D33a382";
-const TOKEN_B_ADDR = "0x2831d275dADCb29F0367Ea388118bE4d2DCe93b5";
-const TOKEN_TRADE_ADDR = "0x171a1454251FDFC5F5AEA9335C456Ed3e62Fe361";
+const TOKEN_A_ADDR = "0x20387311991631aaBa1BD97A6A22cc0B557bbAC9";
+const TOKEN_B_ADDR = "0x0f030E5B9055fd0ACAcE9C7A5013C7EFB7145051";
+const TOKEN_TRADE_ADDR = "0x6C6Fe145f942b4c978b2F752363D92D5A09c597b";
 
 const amt = (n: number) => parseUnits(String(n), 18);
 

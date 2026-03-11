@@ -6,11 +6,11 @@ A peer-to-peer ERC20 trading smart contract deployed on Zircuit Garfield Testnet
 
 | Contract | Address | Sourcify |
 |----------|---------|----------|
-| TokenA (TKA) | `0x24EFc2B61deC3549D46fFDc76077D7753D33a382` | [Verified](https://sourcify.dev/server/repo-ui/48898/0x24EFc2B61deC3549D46fFDc76077D7753D33a382) |
-| TokenB (TKB) | `0x2831d275dADCb29F0367Ea388118bE4d2DCe93b5` | [Verified](https://sourcify.dev/server/repo-ui/48898/0x2831d275dADCb29F0367Ea388118bE4d2DCe93b5) |
-| TokenTrade | `0x171a1454251FDFC5F5AEA9335C456Ed3e62Fe361` | [Verified](https://sourcify.dev/server/repo-ui/48898/0x171a1454251FDFC5F5AEA9335C456Ed3e62Fe361) |
+| TokenA (TKA) | `0x20387311991631aaBa1BD97A6A22cc0B557bbAC9` | [Verified](https://sourcify.dev/server/repo-ui/48898/0x20387311991631aaBa1BD97A6A22cc0B557bbAC9) |
+| TokenB (TKB) | `0x0f030E5B9055fd0ACAcE9C7A5013C7EFB7145051` | [Verified](https://sourcify.dev/server/repo-ui/48898/0x0f030E5B9055fd0ACAcE9C7A5013C7EFB7145051) |
+| TokenTrade | `0x6C6Fe145f942b4c978b2F752363D92D5A09c597b` | [Verified](https://sourcify.dev/server/repo-ui/48898/0x6C6Fe145f942b4c978b2F752363D92D5A09c597b) |
 
-**Network**: Zircuit Garfield Testnet (Chain ID: 48898)
+**Network**: Zircuit Garfield Testnet
 
 ## Address
 
@@ -24,9 +24,9 @@ A peer-to-peer ERC20 trading smart contract deployed on Zircuit Garfield Testnet
 
 | Action | Tx Hash |
 |--------|---------|
-| Alice sets up trade | `0xe50dc43428a3c4c684e011daeca272f9bc4057dd2179d420e23f589d3382ecb0` |
-| Bob settles trade | `0x5e254746c594a4db1797418a4050539d1184b75fdf173ac6b34e4eff8c56d5db` |
-| Owner withdraws fee | `0xdd31902fb562387ec6a49e72f21c06bcc29bfdb1e681a338f16a124d416fe8f3` |
+| Alice sets up trade | `0xcb9122370c6735ff2361b5e92e10f31a680598923d4b486bf22078008756b6ad` |
+| Bob settles trade | `0xf2a28fe0eb4895cbe7ec54fc3afa483c3d7031f8dbaab233aa659db14290eabe` |
+| Owner withdraws fee | `0xe3ca774a36ce8d3823625aa565ea58611ab396e810eaea1c261f1b1a650e6666` |
 
 ## Features
 
@@ -84,12 +84,4 @@ The comprehensive test suite includes 26 tests covering all state modifications,
 
 ```bash
 npx hardhat ignition deploy ignition/modules/lab02deploy.ts --network zircuit --verify
-```
-
-## Verify (manual)
-
-```bash
-npx hardhat verify --network zircuit --contract contracts/TokenA.sol:TokenA <TOKEN_A_ADDRESS>
-npx hardhat verify --network zircuit --contract contracts/TokenB.sol:TokenB <TOKEN_B_ADDRESS>
-npx hardhat verify --network zircuit <TOKEN_TRADE_ADDRESS> <TOKEN_A_ADDRESS> <TOKEN_B_ADDRESS>
 ```
