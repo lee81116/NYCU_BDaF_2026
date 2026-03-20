@@ -20,14 +20,6 @@ A Decentralized Exchange (DEX) smart contract implementing a constant product fo
 | Fee Recipient | `0x3AD64ABb43D793025a2f2bD9d615fa1447008bFD` |
 | On-Site Checker | `0xa6FF20737004fb2f632B6b9388C7731B871a201D` |
 
-## Transaction Hashes
-
-| Action | Tx Hash |
-|--------|---------|
-| Deploy DEX (Bonus) | `0xc7634853efe26c5ebdb5d95a0cd37f30272a5498f2a841e0607a9b9ae24ccd4e` |
-| Add Liquidity (TKA/TKB) | *(Refer to FlowDemo execution logs)* |
-| Call On-Site Checker (check) | *(Refer to FlowDemo execution logs)* |
-
 ## Flow Demo
 
 The on-chain flow demo script (`scripts/FlowDemo.ts`) demonstrates the full DEX lifecycle:
