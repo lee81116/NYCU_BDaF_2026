@@ -8,8 +8,8 @@
 
 | Contract | Address |
 |---|---|
-| TokenLab05 V1 (Implementation) | [`0x1e30A2db9a88b3D50E0C42Ef57a8d60a0c2A26C3`](https://sepolia.etherscan.io/address/0x1e30A2db9a88b3D50E0C42Ef57a8d60a0c2A26C3) |
-| TokenLab05 V2 (Implementation) | [`0x24Ef7ffBe4B4633b7a94BcC2e4703143622155a4`](https://sepolia.etherscan.io/address/0x24Ef7ffBe4B4633b7a94BcC2e4703143622155a4) |
+| TokenLab05 V1 | [`0x1e30A2db9a88b3D50E0C42Ef57a8d60a0c2A26C3`](https://sepolia.etherscan.io/address/0x1e30A2db9a88b3D50E0C42Ef57a8d60a0c2A26C3) |
+| TokenLab05 V2 | [`0x24Ef7ffBe4B4633b7a94BcC2e4703143622155a4`](https://sepolia.etherscan.io/address/0x24Ef7ffBe4B4633b7a94BcC2e4703143622155a4) |
 | **ERC20 Proxy** | [`0x5cfc20B6e9Ba3Ae3284cd8c784B17B5fBe1b6E2d`](https://sepolia.etherscan.io/address/0x5cfc20B6e9Ba3Ae3284cd8c784B17B5fBe1b6E2d) |
 
 ---
@@ -55,7 +55,6 @@ A thin wrapper around `ERC1967Proxy` used to deploy the proxy.
 | `scripts/Upgrade.ts` | Upgrade proxy implementation from V1 to V2 |
 | `scripts/Burn.ts` | Use V2's `burnFrom` to drain StakeForNFT's token balance |
 | `scripts/Mint.ts` | Call `mint` on StakeForNFT to receive the NFT |
-| `scripts/UpgradeAndMint.ts` | Combined: upgrade → burn → mint in one script |
 
 ---
 
